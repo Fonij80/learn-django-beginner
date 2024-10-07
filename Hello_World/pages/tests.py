@@ -21,7 +21,6 @@ class HomePageTests(SimpleTestCase):
         self.assertContains(response, "<h1>Home</h1>")
 
 
-
 class AboutPageTests(SimpleTestCase):
 
     def test_url_location(self):
