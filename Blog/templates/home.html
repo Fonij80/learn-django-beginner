@@ -1,10 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% for post in post_list %}
-<div class="post-entry">
-<h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-<p>{{ post.body }}</p>
-</div>
-{% endfor %}
+    {% if user.is_authenticated %}
+        <p>Hi {{ user.username }}!</p>
+        <p><a href="{% url 'logout' %}">Log out</a></p>
+    {% else %}
+        <p>You are not logged in.</p>
+        <a href="{% url 'login' %}">Log In</a> |
+        <a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %}
+    {% for post in post_list %}
+        <div class="post-entry">
+            <h2>
+                <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+            </h2>
+            <p>{{ post.body }}</p>
+        </div>
+    {% endfor %}
 {% endblock content %}
