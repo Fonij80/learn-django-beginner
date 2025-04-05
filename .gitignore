@@ -1,4 +1,6 @@
+/.venv/
 /Hello_World/.venv/
 /Message_Board/.venv/
 /Blog/.venv/
 /.idea/
+/Personal_Website/db.sqlite3

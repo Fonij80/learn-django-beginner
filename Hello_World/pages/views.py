@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 
 
 # function-based view
-def homePageView(request):
+def home_page_view(request):
     return HttpResponse("Hello World!")
 
 # class-based view
