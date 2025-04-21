@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company</title>
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+        <h1>Home Page</h1>
+        <p>The current date and time is: {% now "DATETIME_FORMAT" %}</p>
+        <p>There are {{ available_jobs|length }} jobs available.</p>
+        <ul>
+            {% for job in available_jobs %}
+                <li>{{ job }}</li>
+            {% endfor %}
+        </ul>
+        {% comment %}Add more content here!{% endcomment %}
+    {% endblock %}
+</body>
+</html>
